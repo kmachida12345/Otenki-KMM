@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "116708505197",
+    "project_id": "otenki-kmm",
+    "storage_bucket": "otenki-kmm.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:116708505197:android:13418f278503133606f164",
+        "android_client_info": {
+          "package_name": "com.github.kmachida12345.otenki_kmm"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "116708505197-al9or47mh9nt5bk5p2ftl7rq2ska2ivc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB1csqjhs9dr10bCKiS_Emr4u3mxDMuAtU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "116708505197-al9or47mh9nt5bk5p2ftl7rq2ska2ivc.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

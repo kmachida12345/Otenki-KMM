@@ -3,7 +3,9 @@ import org.jetbrains.kotlin.gradle.plugin.mpp.KotlinNativeTarget
 plugins {
     kotlin("multiplatform")
     kotlin("native.cocoapods")
+    kotlin("plugin.serialization") version "1.5.10"
     id("com.android.library")
+    id("com.google.gms.google-services")
 }
 
 version = "1.0"
@@ -36,6 +38,8 @@ kotlin {
                         strictly("1.4.2-native-mt")
                     }
                 }
+                implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.2.1")
+                implementation("dev.gitlive:firebase-firestore:1.3.1")
             }
         }
         val commonTest by getting {

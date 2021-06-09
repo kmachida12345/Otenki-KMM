@@ -4,7 +4,9 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.github.kmachida12345.otenki_kmm.Greeting
 import android.widget.TextView
+import com.github.kmachida12345.otenki_kmm.MyFirebaseFirestoreClient
 import com.github.kmachida12345.otenki_kmm.MyHttpClient
+import com.github.kmachida12345.otenki_kmm.Post
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
@@ -14,6 +16,10 @@ fun greet(): String {
 }
 suspend fun get(): String {
     return MyHttpClient().get().toString()
+}
+
+suspend fun postFirebase() {
+    return MyFirebaseFirestoreClient().putValue(Post(System.currentTimeMillis().toDouble()))
 }
 
 class MainActivity : AppCompatActivity() {
@@ -26,6 +32,7 @@ class MainActivity : AppCompatActivity() {
 
         GlobalScope.launch(Dispatchers.IO) {
             get()
+            postFirebase()
         }
     }
 }
