@@ -6,6 +6,7 @@ plugins {
     kotlin("plugin.serialization") version "1.5.10"
     id("com.android.library")
     id("com.google.gms.google-services")
+    id("com.squareup.sqldelight")
 }
 
 version = "1.0"
@@ -40,6 +41,7 @@ kotlin {
                 }
                 implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.2.1")
                 implementation("dev.gitlive:firebase-firestore:1.3.1")
+                implementation("com.squareup.sqldelight:runtime:1.5.0")
             }
         }
         val commonTest by getting {
@@ -51,6 +53,7 @@ kotlin {
         val androidMain by getting {
             dependencies {
                 implementation("io.ktor:ktor-client-android:1.6.0")
+                implementation("com.squareup.sqldelight:android-driver:1.5.0")
             }
         }
         val androidTest by getting {
@@ -62,6 +65,7 @@ kotlin {
         val iosMain by getting {
             dependencies {
                 implementation("io.ktor:ktor-client-ios:1.6.0")
+                implementation("com.squareup.sqldelight:native-driver:1.5.0")
             }
         }
         val iosTest by getting
@@ -74,5 +78,11 @@ android {
     defaultConfig {
         minSdkVersion(26)
         targetSdkVersion(30)
+    }
+}
+
+sqldelight {
+    database("MyAppDatabase") {
+        packageName = "com.github.kmachida12345.otenki_kmm"
     }
 }

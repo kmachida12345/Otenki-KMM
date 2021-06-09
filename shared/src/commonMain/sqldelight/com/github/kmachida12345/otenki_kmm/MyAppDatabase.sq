@@ -1,0 +1,13 @@
+CREATE TABLE Post (
+    timestamp INTEGER NOT NULL PRIMARY KEY
+);
+
+insertPost:
+INSERT INTO Post(timestamp)
+VALUES(?);
+
+deleteAllPosts:
+DELETE FROM Post;
+
+getAllPosts:
+SELECT * FROM Post;
