@@ -4,9 +4,16 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.github.kmachida12345.otenki_kmm.Greeting
 import android.widget.TextView
+import com.github.kmachida12345.otenki_kmm.MyHttpClient
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.launch
 
 fun greet(): String {
     return Greeting().greeting()
+}
+suspend fun get(): String {
+    return MyHttpClient().get().toString()
 }
 
 class MainActivity : AppCompatActivity() {
@@ -16,5 +23,9 @@ class MainActivity : AppCompatActivity() {
 
         val tv: TextView = findViewById(R.id.text_view)
         tv.text = greet()
+
+        GlobalScope.launch(Dispatchers.IO) {
+            get()
+        }
     }
 }
